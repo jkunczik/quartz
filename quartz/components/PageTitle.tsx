@@ -6,7 +6,9 @@ function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
   const baseDir = pathToRoot(fileData.slug!)
   return (
     <h1 class={`page-title ${displayClass ?? ""}`}>
-      <a href={baseDir}>{title}</a>
+      <a href={baseDir}>
+        <image class="logo" src={`${baseDir}/Attachments/logo.svg`}></image>
+      </a>
     </h1>
   )
 }
@@ -14,6 +16,10 @@ function PageTitle({ fileData, cfg, displayClass }: QuartzComponentProps) {
 PageTitle.css = `
 .page-title {
   margin: 0;
+}
+
+.logo {
+  width: 24pt;
 }
 `
 
